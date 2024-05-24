@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { Manrope } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+import "./globals.css";
+import Sidebar from "@/components/custom/sidebar";
+import { cn } from "@/lib/utils";
+
+const font = Manrope({ 
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +20,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <Sidebar />
+      <body className={cn("pr-12 pl-36 py-20", font.className)}>
+        {children}
+      </body>
     </html>
   );
 }
