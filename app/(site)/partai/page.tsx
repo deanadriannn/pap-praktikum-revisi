@@ -1,6 +1,12 @@
 import PartaiCard from "@/components/custom/partai-card";
 
-const listPartai = [
+interface Partai {
+  name: string;
+  image: string;
+  link: string;
+}
+
+const listPartai: Partai[] = [
   {
     name: "Partai Kebangkitan Bangsa",
     image: "/pkb.png",
