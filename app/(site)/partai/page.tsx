@@ -129,7 +129,7 @@ const listPartai: Partai[] = [
   },
 ]
 
-export default function PartaiPage() {
+export default function ListPartaiPage() {
   return (
     <div>
       <h1 className="font-bold text-red-500 text-2xl mb-7">Partai</h1>
