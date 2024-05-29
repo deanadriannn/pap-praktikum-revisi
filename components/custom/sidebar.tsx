@@ -69,7 +69,7 @@ const Sidebar = () => {
               width={30}
               height={30}
             />
-            <div className={cn("sidebar-item w-[5px] h-0", pathname === "/partai" ? "h-[50px]" : "h-0")} />
+            <div className={cn("sidebar-item w-[5px] h-0", /^\/partai(\/\w+)?$/.test(pathname) ? "h-[50px]" : "h-0")} />
           </Link>
           <Link href="/voting" className="relative group">
             <Image 
