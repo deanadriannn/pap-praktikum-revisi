@@ -135,7 +135,7 @@ const KandidatDetail: React.FC<KandidatDetailProps> = ({
             <p>Age: {age}</p>
             <p>Party: {partai}</p>
             <p>History: {history}</p>
-            <Link href={`https://en.wikipedia.org/wiki/${name}`} passHref>
+            <Link href={`https://en.wikipedia.org/wiki/${name}`} passHref target='_blank'>
             <Button className="bg-green-500 text-white mt-2">
                 Profil Kandidat
             </Button>
@@ -147,7 +147,7 @@ const KandidatDetail: React.FC<KandidatDetailProps> = ({
             <p>Age: {viceAge}</p>
             <p>Party: {vicePartai}</p>
             <p>History: {viceHistory}</p>
-            <Link href={`https://en.wikipedia.org/wiki/${viceName}`} passHref>
+            <Link href={`https://en.wikipedia.org/wiki/${viceName}`} passHref target='_blank'>
             <Button className="bg-green-500 text-white mt-2">
                 Profil Kandidat
             </Button>
