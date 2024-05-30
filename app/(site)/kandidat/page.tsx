@@ -20,7 +20,7 @@ interface Kandidat {
 }
 
 // Data kandidat
-const candidates: Kandidat[] = [
+export const candidates: Kandidat[] = [
   {
     name: 'Anies Rasyid Baswedan',
     age: 55,
