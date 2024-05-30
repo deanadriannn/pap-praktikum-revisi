@@ -64,29 +64,31 @@ const KandidatCard = ({
   };
 
   return (
-    <div className="flex justify-center">
-      <Card className="w-[320px] h-[480px] flex flex-col items-center gap-4 mx-4 my-4">
-            <CardHeader className="w-full flex flex-col items-center mt-4">
+    <div className="flex flex-col items-center">
+      <Card className="w-[320px] flex flex-col items-center gap-4 mx-4 my-4">
+        <CardHeader className="w-full flex justify-around mt-4">
+          <div className="flex flex-col items-center">
             <Image
-                src={image}
-                alt={name}
-                width={100}
-                height={100}
-                className="rounded-full object-cover mt-2 border-2 border-black-500"
+              src={image}
+              alt={name}
+              width={100}
+              height={100}
+              className="rounded-full object-cover mt-2 border-2 border-black-500"
             />
             <p className="text-center text-md mt-2 font-bold">{name}</p>
-            </CardHeader>
-            <CardContent className="w-full flex flex-col items-center mt-4">
+          </div>
+          <div className="flex flex-col items-center">
             <Image
-                src={viceImage}
-                alt={viceName}
-                width={100}
-                height={100}
-                className="rounded-full object-cover mt-2 border-2 border-black-500"
+              src={viceImage}
+              alt={viceName}
+              width={100}
+              height={100}
+              className="rounded-full object-cover mt-2 border-2 border-black-500"
             />
             <p className="text-center text-md mt-2 font-bold">{viceName}</p>
-            </CardContent>
-        <CardFooter className="w-full flex justify-center mt-auto mb-4">
+          </div>
+        </CardHeader>
+        <CardFooter className="w-full flex justify-center mt-4 mb-4">
           <Button className="bg-blue-500 text-white" onClick={handleDetailClick}>
             Lihat Detail
           </Button>
@@ -133,29 +135,33 @@ const KandidatDetail: React.FC<KandidatDetailProps> = ({
             <img src={image} alt={name} className="w-32 h-32 object-cover rounded-full mb-2" />
             <h3 className="font-bold text-xl text-center">{name}</h3>
             <p>Age: {age}</p>
-            <p>Party: {partai}</p>
-            <p>History: {history}</p>
-            <Link href={`https://en.wikipedia.org/wiki/${name}`} passHref target='_blank'>
-            <Button className="bg-green-500 text-white mt-2">
+            <Link href={`partai/${partai.toLowerCase()}`} passHref>
+              <p>Party: {partai}</p>
+            </Link>
+            <p className='text-center'>{history}</p>
+            <Link href={`https://en.wikipedia.org/wiki/${name}`} passHref>
+              <Button className="bg-green-500 text-white mt-2">
                 Profil Kandidat
-            </Button>
+              </Button>
             </Link>
           </div>
           <div className="flex flex-col items-center">
             <img src={viceImage} alt={viceName} className="w-32 h-32 object-cover rounded-full mb-2" />
             <h3 className="font-bold text-xl text-center">{viceName}</h3>
             <p>Age: {viceAge}</p>
-            <p>Party: {vicePartai}</p>
-            <p>History: {viceHistory}</p>
-            <Link href={`https://en.wikipedia.org/wiki/${viceName}`} passHref target='_blank'>
-            <Button className="bg-green-500 text-white mt-2">
+            <Link href={`partai/${vicePartai.toLowerCase()}`} passHref>
+              <p>Party: {vicePartai}</p>
+            </Link>
+            <p className='text-center'>{viceHistory}</p>
+            <Link href={`https://en.wikipedia.org/wiki/${viceName}`} passHref>
+              <Button className="bg-green-500 text-white mt-2">
                 Profil Kandidat
-            </Button>
+              </Button>
             </Link>
           </div>
         </div>
         <button
-          className="justify-end mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600  "
+          className="justify-end mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
           onClick={onClose}
         >
           Close
