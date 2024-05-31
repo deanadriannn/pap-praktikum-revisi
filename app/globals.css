@@ -85,3 +85,7 @@ body,
 .sidebar-item {
   @apply bg-red-500 absolute top-3 -right-9 transform -translate-x-1/2 -translate-y-1/2 rounded-md group-hover:h-[50px] transition-all duration-300 ease-out
 }
+
+
+
+

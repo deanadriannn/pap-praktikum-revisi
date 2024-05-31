@@ -1,3 +1,4 @@
+import Authenticated from "@/components/custom/authenticated";
 import PartaiCard from "@/components/custom/partai-card";
 
 interface Partai {
@@ -131,6 +132,7 @@ const listPartai: Partai[] = [
 
 export default function ListPartaiPage() {
   return (
+    <Authenticated>
     <div>
       <h1 className="font-bold text-red-500 text-2xl mb-7">Partai</h1>
       <div className="h-full grid grid-cols-1 gap-1 sm:grid-cols-2 sm:gap-2 md:grid-cols-4 lg:grid-cols-6 lg:gap-4 2xl:grid-cols-7 2xl:gap-6">
@@ -139,5 +141,6 @@ export default function ListPartaiPage() {
         ))}
       </div>
     </div>
+    </Authenticated>
   );
 }

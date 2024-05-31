@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 
 import "./globals.css";
-import Sidebar from "@/components/custom/sidebar";
+
 import { cn } from "@/lib/utils";
+import Provider from "@/components/ui/provider";
 
 const font = Manrope({ 
   subsets: ["latin"],
@@ -21,9 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <Sidebar />
-      <body className={cn("pr-12 pl-36 py-20", font.className)}>
+      <body className={cn(font.className)}>
+      <Provider>
         {children}
+      </Provider>
       </body>
     </html>
   );
